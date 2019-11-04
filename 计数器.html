@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">0</button>
+    <script>
+    btn.onclick = (function(){
+        var i =0
+        return function(){// 每点击button一次加1 获取button页面元素  
+            btn.innerHTML = ++i
+        }
+    })()
+    </script>
+</body>
+</html>

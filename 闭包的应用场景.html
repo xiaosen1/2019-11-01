@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    // window.onload 当页面所有静态资源加载完成才执行里面的函数
+    window.onload = function(){
+        var btn = document.getElementById('btn') //获取相应的元素
+        var i = 0  // 储存值
+        btn.onclick = function(){
+            alert(i) // 添加点击事件  点击出i的值
+            i= null
+            console.dir(btn.onclick)
+        }
+        btn2.onclick = function(){
+            console.dir(btn.onclick)
+        }
+        console.dir(btn.onclick)
+    }
+    </script>
+</head>
+<body>
+    <button id="btn">1</button>
+    <button id="btn2">2</button>
+    <button>3</button>
+    <script>
+    // for (var i = 0; i < 10; i++) {
+    //     function fn(a){
+    //         setTimeout(function(){
+    //             console.log(a)
+    //         },1000)
+    //     }
+    //     fn(i)
+    // }
+
+    // const btns = document.querySelectorAll('button')
+    // for (var i = 0; i < btns.length; i++) {
+    //     btns[i],index = i
+    //     function fn(aa){
+    //         btns[i].onclick = function(){
+    //             alert(aa)  // 点击每个button每项的时候弹出
+    //         }
+    //     }     
+    //     fn(i) 
+
+    // (function(aa){
+    //     btns[aa].onclick = function(){
+    //         alert(aa)
+    //     }
+    // })(i)
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // +function() {
+        /* 
+        形参赋值： ''
+        *****************
+        预解析：
+            var a
+            a = function a(){}
+            b = function(){}
+            var c
+        *****************
+        执行上下文：
+                function a(){}
+                a=5
+                b=6
+                c=d=b     window.d = 6
+
+         */
+    //      console.log(a)  // 函数  function a(){}
+    //      var a =5
+    //      function a(){}
+    //      console.log(a)  // 5
+    //      function  b(){}
+    //      b = 6  
+    //      console.log(b)    // 6
+    //      var c=d=b 
+    // }()
+    // console.log(d)    //  6  window.d
+    // console.log(c)    // 拿不到函数里的  报错
+    
+    
+    /* 
+    this
+    事件触发是谁，this就是是谁
+    window  全局打印this  fn（）  this是window
+    对象下的this  就是.前面的主
+    */
+
+    var obj = {
+        val:2,
+        dbl:function(){
+            var val = 45
+            console.log(this)  // 单个输出this，说明事件触发的是obj
+            this.val *=2   // obj下的val乘以2
+            console.log(val)  //45  // 向上查找  window.val是45
+            console.log(this.val)  // 4
+        }
+    }
+
+    let obj2 = {
+        style:{
+            fn:function(){console.log(this)}
+        }
+    }
+
+    // obj2.style.fn()   //this是obj2下的style对象
+    // console.log()
+    let f = obj2.style.fn;
+    f()
+    </script>
+</body>
+</html>

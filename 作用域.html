@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <!-- <script> // 如果有多个script标签，上一个标签报错是不会影响下面script中的代码执行的
+        /* 
+        var会在window上挂属性而let不会
+    查找的方式，先看当前的script有没有需要的，没有还会去上一个script标签中查找，如果确实找不到，那么久报错    
+        */
+    //     var b = 20  // 全局变量对象（window）  window.b
+    // </script> -->
+     <script>
+    //     alert(b)  // 从上往下查询
+    //     var a = 10
+    //     function a() {
+    //     }
+
+        // a = 20  // 同样也会加入到window里   但是如果在console.log下面会报错
+        // console.log(a)
+
+        // var a = 20
+        // // 在函数内开辟一个执行栈
+        //     // 形参赋值
+        //     // 变量提升
+        //     // 执行上下文
+        //     // 销毁作用域
+        // function fn(){
+        //      a = 30   // 首先现在函数里查找变量a  如果没有就去函数外找var变量  知道找到window身上
+        // }
+        // fn()
+        // console.log(a)
+        // var b = 10
+        // function fn(){
+        //     alert(a)
+        //     alert(b)  // 创建一个变量没有赋值获取这个变量就是undefined
+        //     var a =20
+        //     b = 50
+        //     alert(a)
+        //     var b  // 因为这里已经有了一个var b 所以就不会出去，如果把函数里的var b 去掉就会去寻找window.b  结果就会是50
+        // }
+        // fn()
+        // alert(b)
+        // var b = 10  //目前window.b的值是30   拿不到私有内存的b=50
+        // function fn(){
+        //     alert(a) // undefined
+        //     var a =20  
+        //     alert(b)// undefined
+        //     window.b=30    // 设置的是window.b的值
+        //     alert(a)  //20
+        //     b = 50
+        //     var b
+        // }
+        // fn()
+        // alert(b)  //30
+        // var a = 20
+
+        // //  形参赋值相当于 var a =20
+        // function fn(a){
+        //     alert(a)   //20
+        //     var b = 30
+        //     a = 40  //改变属于函数的a的变量改为40
+        //     alert(a)  // 上面改变变量  40
+        // }
+        // fn(a)  // 拿不到 函数中的变量所以是20
+
+       
+
+
+//         var a = 20
+//         function fn(a){  // 形参赋值  20
+//         alert(a)   // 20
+//         var b = 30
+//         a = 40  
+//         var a
+//         alert(a)   // 在函数内通过a变量40   所以是40
+// }
+//         fn(a) 
+//         alert(a)   // 获取不到函数内的变量所以是20
+
+
+        // 函数相对比  函数里的函数比函数外的函数大 所以取函数里的
+        var a = function(){console.log(123123123)}
+        function fn(a){  //20
+        alert(a)    //function a(){console.log(23233434)}  //  
+        var b = 30
+        a = 40  
+        var a
+        alert(a)   //40
+        function a(){
+            console.log(23233434)
+        }
+}
+        fn(a) 
+        alert(a)   //  var a = function(){console.log(123123123)}
+    </script>
+</body>
+
+</html>

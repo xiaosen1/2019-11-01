@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+   function fn(){
+       console.log(this)  //  window
+   }
+   document.onclick = function(){
+       fn()    // 点击出现window
+   }
+
+
+
+// function fn(){
+//        console.log(this)  // window
+//    }
+//     document .onclick = (function(){
+//         console.log(this)  // document
+//         return fn
+//     })()
+   </script> 
+</body>
+</html>
