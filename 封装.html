@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+   let con= {
+       log:function(i){
+           console.log(i)
+           return i
+       },
+       dir:function(i){
+           console.dir(i)
+           return i
+       },
+       sum:function(log,dir){
+           return log+dir
+       }
+   }
+
+   let obj2 = (function(){
+       let sum = 0
+       function sumFn(log,dir){  //log = 5   dir = 5
+           return log+dir
+       }
+       return {
+           sum:sumFn(5,5)
+       }
+   })()
+   console.log(obj2.sum)  // 10
+
+   </script> 
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+    面向对象是一种对现实世界理解和抽象的方法，是计算机发展到一定阶段后的产物
+
+    JS是一个基于面向对象思想（基于对象）
+
+    抽象：
+        抽出像的部分（把相同的代码抽离出来）
+
+    类  class
+
+    ***换了一种写法去写代码***
+
+    为什么要用面向对象来编程？
+        通过对象来编程，扩展性更强，能够做到高内聚，低耦合
+
+    面向对象：
+        将具有相同特征，特性的代码，抽离出来归为一类，然后把描述这个类的细节特性（属性，方法） 挂在这个类的原型下的一种编程方式
+    构造函数（类）
+        老师：
+            给我讲东西的都叫老师
+    实例
+        我：你真胖
+        波斯猫
+
+        obj = new Object()
+        let ary = []
+        let ary = new Array()
+        new Date
+     */
+
+     // 类
+     // 归类 构造函数（构造对象的函数）
+    //  function Person(name,age,sex){
+    //      let obj = {}
+    //      obj.name =name 
+    //      obj.age = age
+    //      obj.sex = sex
+    //      return obj
+    //  }
+    //  // 描述一个东西的细节特性表达出来
+    //  let p1 = new Person('冰激凌',11,'冰')  // p1 实例
+
+    // 归类 构造函数 （构造对象的函数）
+    function Person (name,age,sex){
+        // let obj = {}   this {}
+        this.name = name
+        this.age = age
+        this.sex = sex
+
+        // this.say = function(){
+        //     alert('我是'+this.name)
+        // }
+        // return obj
+    }
+    Person.prototype.say = function (){
+        alert('我是'+this.name)
+    }
+    let p1 = new Person('小猫',2,'猫')  // p1 实例
+    let p2 = new Person ('小狗',2,'犬')  // p2 实例
+
+    console.log(p1.say == p2.say)
+    // let ary1 = []  // Array
+    // let ary2 = []  // Array
+
+    // console.log(ary1.push == ary2.push)
+    p1.say()
+    p2.say()
+
+    // console.log(p1)
+
+    let name = '小猫'
+    let age = 2
+    let sex = '猫'
+
+    let name = '小狗'
+    let age = 2
+    let sex = '犬'
+    </script>
+</body>
+</html>

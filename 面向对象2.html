@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+    猫：四条腿  体型小  有毛  有爪子  有尾巴
+     */
+
+     function Cat(name){
+         this.name = name
+         this.foot = '4条'
+         this.body = '小'
+         this.tail = true
+         this.hair = '毛'
+         this.claw = '小爪子'
+     }
+     Cat.prototype.say = function(){
+         alert('喵喵喵')
+     }
+     Cat.prototype.skill = function(){
+         alert('抓老鼠')
+     }
+     let kitty = new Cat('kitty')  //实例
+    //  kitty.shill()
+
+     Object.prototype.skill = 8
+     console.log(kitty.skill)
+     /* 
+     kitty.skill -> kitty._proto_ -> Cat.prototype
+      
+      Cat.prototype = {
+          _proto_: 构造函数的原型
+      }
+      Object.prototype
+
+
+      实例有原型链，函数有原型，原型又是一个对象，没对象他就是实例  实例又有原型链，找到构造函数的原型，Object.prototype._prooto_=null
+      
+      */
+     console.log(kitty)
+
+
+     console.log(Object.prototype._proto_)
+    </script>
+</body>
+</html>
